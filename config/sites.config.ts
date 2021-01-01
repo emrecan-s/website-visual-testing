@@ -1,5 +1,3 @@
-// import { SiteConfig } from "../src/config/siteconfig.interface";
-
 export const sitesConfig = [
     {
         name: "batchrank",
@@ -8,13 +6,10 @@ export const sitesConfig = [
                 name: "home",
                 url: "https://batchrank.com/",
                 elementsToScreenshot: [
-                    'body',
-                    '.elementor-element-57b04e36',
-                    'section.elementor-element-1ad9c154'
+                    'body'
                 ],
                 elementsToRemove: [
-                    '.elementor-widget-google_maps',
-                    'section.elementor-element-d8bc538'
+
                 ],
                 customTestsConfig: [
                     {

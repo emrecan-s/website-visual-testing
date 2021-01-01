@@ -13,7 +13,7 @@ if (devicesConfig.predefinedDeviceNames) {
 
 }
 
-describe.each(sitesConfig)('Verify that each site visual works properly', (siteConfig) => {
+describe.each(sitesConfig)('Verify that the page is not changed', (siteConfig) => {
 
     describe.each(siteConfig.pages)('Site: ' + siteConfig.name, (pageConfig) => {
 
