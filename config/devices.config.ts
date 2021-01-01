@@ -2,7 +2,7 @@ export const devicesConfig = {
     customDevices: [
         {
             name: "desktop",
-            userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36",
+            userAgent: "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
             viewport: {
                 width: 1920,
                 height: 947,

@@ -1,5 +1,4 @@
 import puppeteer from "puppeteer";
-//import puppeteer from "puppeteer-firefox";
 import devices from 'puppeteer/DeviceDescriptors'
 
 import { optionsConfig } from "../config/options.config";
