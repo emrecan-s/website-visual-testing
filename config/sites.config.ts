@@ -4,7 +4,7 @@ export const sitesConfig = [
         pages: [
             {
                 name: "home",
-                url: "https://batchrank.com/",
+                url: "http://localhost:8000/",
                 elementsToScreenshot: [
                     'body'
                 ],
@@ -23,7 +23,7 @@ export const sitesConfig = [
             },
             {
                 name: "FAQ",
-                url: "https://batchrank.com/faq",
+                url: "http://localhost:8000/blog",
                 elementsToScreenshot: ['body'],
                 elementsToRemove: [],
                 customTestsConfig: [
