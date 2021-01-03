@@ -2,17 +2,17 @@ var nodemailer = require('nodemailer');
 require('dotenv').config()
 var fs = require('fs');
 
-let pdfs = []
+let pngs = []
 //Find all diffs to attached to the mail
 const testFolder = './__output__/image_diff/';
 fs.readdir(testFolder, (err, files) => {
   files.forEach(file => {
-    let pdf= {
+    let png= {
     filename: file,
     path: `./__output__/image_diff/${file}`,
-    contentType: 'application/pdf'
+    contentType: 'image/png'
   }
-  pdfs.push(pdf)
+  pngs.push(png)
   });
 });
 
@@ -20,7 +20,8 @@ fs.readdir(testFolder, (err, files) => {
 
 
 
-console.log('pdfs')
+
+
 var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -30,7 +31,7 @@ var transporter = nodemailer.createTransport({
 });
 
 
-//Upto 25 mb attachment this method will work well, after this you need to upload them to the 
+//Upto 25 mb attachment this method will work well, after this you need to upload them to the gdrive/amzon s3 etc.
 
 
 fs.readFile('test-report.html', {encoding: 'utf-8'}, function (err, html) {
@@ -42,7 +43,7 @@ fs.readFile('test-report.html', {encoding: 'utf-8'}, function (err, html) {
     to: 'emreca.sanli@gmail.com', // list of receivers
     subject: 'test mail1', // Subject line
     html: html, // plain text body
-    attachments: pdfs
+    attachments: pngs
 };
     transporter.sendMail(mailOptions, function(error, info) {
       if (error) {
