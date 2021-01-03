@@ -14,7 +14,6 @@ export const devicesConfig = {
         }
     ],
     predefinedDeviceNames: [
-        "iPad",
         "iPhone 6 Plus"
     ]
 };
