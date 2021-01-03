@@ -1,11 +1,21 @@
 import puppeteer from "puppeteer";
 import devices from 'puppeteer/DeviceDescriptors'
 
-import { optionsConfig } from "../config/options.config";
-import { sitesConfig } from "../config/sites.config";
-import { devicesConfig } from "../config/devices.config";
+import {
+    optionsConfig
+} from "../config/options.config";
+import {
+    sitesConfig
+} from "../config/sites.config";
+import {
+    devicesConfig
+} from "../config/devices.config";
 
-let emulatedDevices: Array<puppeteer.devices.Device> = devicesConfig.customDevices;
+const scrollPageToBottom = require ('puppeteer-autoscroll-down')
+
+
+
+let emulatedDevices: Array < puppeteer.devices.Device > = devicesConfig.customDevices;
 if (devicesConfig.predefinedDeviceNames) {
 
     const predefinedDevices = devicesConfig.predefinedDeviceNames.map((deviceName) => devices[deviceName])
@@ -38,12 +48,20 @@ describe.each(sitesConfig)('Verify that the page is not changed', (siteConfig) =
                     await pageInIncognitoContext.emulate(device);
 
                     // Go to the page
-                    await pageInIncognitoContext.goto(pageConfig.url);
+                    await pageInIncognitoContext.goto(pageConfig.url, {
+                        waitUntil: 'networkidle2'
+                    })
 
+                    await pageInIncognitoContext.waitFor(1000);
+
+                    const lastPosition = await scrollPageToBottom(pageInIncognitoContext)
+
+
+                    await pageInIncognitoContext.waitFor(1000);
                     // Remove the elements
                     if (pageConfig.elementsToRemove) {
 
-                        const elementsToRemove: Array<string> = pageConfig.elementsToRemove;
+                        const elementsToRemove: Array < string > = pageConfig.elementsToRemove;
                         elementsToRemove.map(async (elementString: string) => {
 
                             return await pageInIncognitoContext.$$eval(elementString, (elementHandles) => {
@@ -54,8 +72,7 @@ describe.each(sitesConfig)('Verify that the page is not changed', (siteConfig) =
                                         elementHandle.remove();
                                     });
 
-                                }
-                                else {
+                                } else {
 
                                     return undefined;
 
@@ -97,7 +114,8 @@ describe.each(sitesConfig)('Verify that the page is not changed', (siteConfig) =
                             if (boundingBox) {
 
                                 const screenshot = await pageInIncognitoContext.screenshot({
-                                    clip: boundingBox
+                               
+                                   fullPage: true
                                 });
 
                                 expect(screenshot).toMatchImageSnapshot({

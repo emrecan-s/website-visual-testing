@@ -30,7 +30,7 @@ var transporter = nodemailer.createTransport({
 });
 
 
-
+//Upto 25 mb attachment this method will work well, after this you need to upload them to the 
 
 
 fs.readFile('test-report.html', {encoding: 'utf-8'}, function (err, html) {

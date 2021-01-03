@@ -1,10 +1,10 @@
 export const sitesConfig = [
     {
-        name: "batchrank",
+        name: "amazon",
         pages: [
             {
                 name: "home",
-                url: "http://localhost:8000/",
+                url: "https://www.amazon.com/",
                 elementsToScreenshot: [
                     'body'
                 ],
@@ -22,8 +22,8 @@ export const sitesConfig = [
                 ]
             },
             {
-                name: "FAQ",
-                url: "http://localhost:8000/blog",
+                name: "todays' deals",
+                url: "https://www.amazon.com/international-sales-offers/b/?ie=UTF8&node=15529609011&ref_=nav_cs_gb_intl",
                 elementsToScreenshot: ['body'],
                 elementsToRemove: [],
                 customTestsConfig: [

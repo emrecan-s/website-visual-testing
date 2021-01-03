@@ -4,8 +4,8 @@ export const devicesConfig = {
             name: "desktop",
             userAgent: "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
             viewport: {
-                width: 1920,
-                height: 947,
+                height: 1920,
+                width: 1280,
                 deviceScaleFactor: 1,
                 isMobile: false,
                 isLandscape: false,
