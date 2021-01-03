@@ -1,37 +1,42 @@
 var nodemailer = require('nodemailer');
 require('dotenv').config()
 var fs = require('fs');
+const imagemin = require('imagemin');
+const imageminPngquant = require('imagemin-pngquant');
+
+//Compress images
+
+(async () => {
+
+  const files = await imagemin(['./__output__/image_diff/*png'], {
+    destination: './__output__/optimized',
+    plugins: [
+      imageminPngquant({
+       quality: [0.2, 0.3]
+      })
+    ]
+  });
 
 let pngs = []
 //Find all diffs to attached to the mail
-const testFolder = './__output__/image_diff/';
+const testFolder = './__output__/optimized/';
 fs.readdir(testFolder, (err, files) => {
   files.forEach(file => {
-    let png= {
-    filename: file,
-    path: `./__output__/image_diff/${file}`,
-    contentType: 'image/png'
-  }
-  pngs.push(png)
+    let png = {
+      filename: file,
+      path: `./__output__/optimized/${file}`,
+      contentType: 'image/png'
+    }
+    pngs.push(png)
   });
-});
-
-
-
-
-
-
 
 var transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: process.env.USERNAME,
-        pass: process.env.PASSWORD
-    }
+  service: 'gmail',
+  auth: {
+    user: process.env.USERNAME,
+    pass: process.env.PASSWORD
+  }
 });
-
-
-//Upto 25 mb attachment this method will work well, after this you need to upload them to the gdrive/amzon s3 etc.
 
 
 fs.readFile('test-report.html', {encoding: 'utf-8'}, function (err, html) {
@@ -54,3 +59,23 @@ fs.readFile('test-report.html', {encoding: 'utf-8'}, function (err, html) {
     });
   }
 });
+
+
+
+
+
+});
+
+
+})();
+
+
+
+
+
+
+
+
+
+//Upto 25 mb attachment this method will work well, after this you need to upload them to the gdrive/amzon s3 etc.
+

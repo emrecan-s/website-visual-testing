@@ -1,10 +1,10 @@
 export const sitesConfig = [
     {
-        name: "amazon",
+        name: "bbc",
         pages: [
             {
-                name: "home",
-                url: "https://www.amazon.com/",
+                name: "bbc home",
+                url: "https://www.bbc.com/",
                 elementsToScreenshot: [
                     'body'
                 ],
@@ -22,8 +22,8 @@ export const sitesConfig = [
                 ]
             },
             {
-                name: "todays' deals",
-                url: "https://www.amazon.com/international-sales-offers/b/?ie=UTF8&node=15529609011&ref_=nav_cs_gb_intl",
+                name: "bbc news ",
+                url: "https://www.bbc.com/news",
                 elementsToScreenshot: ['body'],
                 elementsToRemove: [],
                 customTestsConfig: [

@@ -6,6 +6,8 @@ import {configureToMatchImageSnapshot} from "jest-image-snapshot";
 require('dotenv').config()
 
 
+//change the treshold to avoid false positives
+
 const toMatchImageSnapshot = configureToMatchImageSnapshot({
 	customSnapshotsDir: './__output__/image_snapshots',
 	customDiffDir: './__output__/image_diff/',
