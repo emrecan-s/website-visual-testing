@@ -114,7 +114,7 @@ describe.each(sitesConfig)('Verify that the page is not changed', (siteConfig) =
                             if (boundingBox) {
 
                                 const screenshot = await pageInIncognitoContext.screenshot({
-                               
+                               //You can use clip to take partial screenshot
                                    fullPage: true
                                 });
 

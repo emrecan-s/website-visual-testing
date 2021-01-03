@@ -9,8 +9,7 @@ module.exports = {
         "^.+\\.ts?$": "ts-jest"
     },
     verbose: true,
-    //globalSetup: './jest.global-setup.ts', // will be called once before all tests are executed
-    //globalTeardown: './jest.global-teardown.ts' // will be called once after all tests are executed
+
     //Create an HTML report for email
   reporters: [
     "default",
