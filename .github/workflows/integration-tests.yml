@@ -21,12 +21,13 @@ jobs:
 
       - name: Install deps
         run: yarn
-            
+        
 
       - name: Run tests
+        env:
+             USERNAME: ${{ secrets.USERNAME }}
+             PASSWORD: ${{ secrets.PASSWORD }}
         run: node mailer
-        with:
-            ${{ secrets.USERNAME }}    
 
 
 
