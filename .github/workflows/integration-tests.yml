@@ -21,6 +21,10 @@ jobs:
 
       - name: Install deps
         run: yarn
+        with:
+          env:
+             USERNAME: ${{ secrets.USERNAME }}
+             PASSWORD: ${{ secrets.PASSWORD }} 
         
 
       - name: Run tests
