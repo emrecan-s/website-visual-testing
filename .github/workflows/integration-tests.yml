@@ -21,11 +21,12 @@ jobs:
 
       - name: Install deps
         run: yarn
-        with:
-            ${{ secrets.USERNAME }}        
+            
 
       - name: Run tests
         run: node mailer
+        with:
+            ${{ secrets.USERNAME }}    
 
 
 
