@@ -27,7 +27,7 @@ jobs:
         env:
              USERNAME: ${{ secrets.USERNAME }}
              PASSWORD: ${{ secrets.PASSWORD }}
-        run: node mailer
+        run: yarn test
 
 
 
