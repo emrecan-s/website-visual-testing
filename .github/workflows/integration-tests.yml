@@ -1,5 +1,7 @@
 name: Automated browser tests
-on: push
+on:
+  schedule:
+    - cron: "0 0 * * *"
 jobs:
   tests:
     runs-on: ubuntu-latest

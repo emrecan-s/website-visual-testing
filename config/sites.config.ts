@@ -1,43 +1,22 @@
 export const sitesConfig = [
     {
-        name: "bbc",
+        name: "Gsearch-converged",
         pages: [
             {
-                name: "bbc home",
-                url: "https://www.bbc.com/",
+                name: "emrecan sanli google search",
+                url: "https://www.google.com/search?q=emrecan+sanli",
                 elementsToScreenshot: [
                     'body'
                 ],
                 elementsToRemove: [
-
-                ],
-                customTestsConfig: [
-                    {
-                        path: "loads-in-less-than",
-                        expectedValue: 2.0,
-                        args: {
-                            loadEvent: "load"
-                        }
-                    }
+                '.hide-focus-ring'
                 ]
             },
             {
-                name: "bbc news ",
-                url: "https://www.bbc.com/news",
+                name: "converged blog ",
+                url: "https://converged.agency/blog/",
                 elementsToScreenshot: ['body'],
-                elementsToRemove: [],
-                customTestsConfig: [
-                    {
-                        path: "has-only-one-h1"
-                    },
-                    {
-                        path: "loads-in-less-than",
-                        expectedValue: 2.0,
-                        args: {
-                            loadEvent: "load"
-                        }
-                    }
-                ]
+                elementsToRemove: []
             }
             
         ]

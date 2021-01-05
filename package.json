@@ -1,10 +1,10 @@
 {
   "name": "website-visual-testing",
-  "version": "0.1.3",
-  "description": "Take automatic screenshots of your web pages and do your own visual regression tests using Node, Jest and Puppeteer headless browser",
+  "version": "0.2",
+  "description": "Take automatic screenshots of your web pages and do your own visual regression tests using Node, Jest and Puppeteer headless browser and send a mail to your mail",
   "main": "./src/index.ts",
-  "repository": "https://github.com/jflagarde/website-visual-testing.git",
-  "author": "Jean-Francois Lagarde <jflagarde@jflagarde.com>",
+  "repository": "https://github.com/emrecan-s/website-visual-testing",
+  "author": "Jean-Francois Lagarde <jflagarde@jflagarde.com> & Emrecan Sanli <emreca.sanli@gmail.com>",
   "license": "MIT",
   "private": true,
   "types": "./src/index.d.ts",
@@ -33,7 +33,7 @@
     "jest-image-snapshot": "^4.3.0",
     "jest-puppeteer": "^4.3.0",
     "ts-jest": "^26.4.4",
-    "typescript": "^3.6.4"
+    "typescript": "^4.1.3"
   },
   "scripts": {
     "build": "tsc",
