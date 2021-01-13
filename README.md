@@ -2,14 +2,9 @@
 # website-visual-testing
 Take automatic screenshots of your web pages and do your own visual regression tests using Node, Jest and Puppeteer headless browser
 
-## Introduction
-This is the basic first version of the project. For the moment, it should be considered as a quick demo and a proof of concept. I'll work on proper documenting what is already there and improvement the code as soon as I have a bit of time.
-
-Meanwhile, you can watch this demo and explanation video
-[![A quick demo video of how to take automatic screenshots and do visual regressions with Puppeteer](https://img.youtube.com/vi/uIOAcS64vYU/0.jpg)](https://www.youtube.com/watch?v=uIOAcS64vYU "A quick demo of how to take automatic screenshots and do visual regressions with Puppeteer")
 
 ## How to use this
-* Open the ticket https://emrecan-sanli.medium.com/guide-to-set-your-own-automated-visual-diff-checker-with-github-actions-1492d38f678
+https://emrecan-sanli.medium.com/guide-to-set-your-own-automated-visual-diff-checker-with-github-actions-1492d38f678
 
 ## Changelog
 * v2      - 2 Jan 2021  -  Redundant tests are removed, tests are modified for SEO purposes+git action logic is added..
